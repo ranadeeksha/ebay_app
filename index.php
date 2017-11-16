@@ -16,12 +16,14 @@ $CreateTimeTo = gmdate("Y-m-d\TH:i:s");
 
 $requestXmlBody = '<?xml version="1.0" encoding="utf-8" ?>';
 $requestXmlBody .= '<GetOrdersRequest xmlns="urn:ebay:apis:eBLBaseComponents">';
+$requestXmlBody .= '<DetailLevel>ReturnAll</DetailLevel>';
 $requestXmlBody .= '<OrderIDArray> OrderIDArrayType <OrderID> OrderIDType (string) </OrderID></OrderIDArray>';
 
 $requestXmlBody .= "<CreateTimeFrom>$CreateTimeFrom</CreateTimeFrom><CreateTimeTo>$CreateTimeTo</CreateTimeTo>";
 $requestXmlBody .= "<RequesterCredentials><eBayAuthToken>$userToken</eBayAuthToken></RequesterCredentials>";
 $requestXmlBody .= '</GetOrdersRequest>';
 $session = new eBaySession($userToken, $devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
+echo $session;
 $responseXml = $session->sendHttpRequest($requestXmlBody);
 if (stristr($responseXml, 'HTTP 404') || $responseXml == '')
     die('<P>Error sending request');
