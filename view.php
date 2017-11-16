@@ -20,5 +20,5 @@ if ($entries == 0) {
        else{
 	echo "No Order Found";
 	}
-
-	?>
+}
+?>
