@@ -4,7 +4,10 @@
 /* Licensed under CDDL 1.0 -  http://opensource.org/licenses/cddl1.php */
 ?>
 <?php
+
 ini_set("display_errors", 1);
+session_start();
+set_time_limit(0);
 require 'keys.php';
 require 'eBaySession.php';
 $siteID = 0;
