@@ -23,7 +23,7 @@ $requestXmlBody .= "<CreateTimeFrom>$CreateTimeFrom</CreateTimeFrom><CreateTimeT
 $requestXmlBody .= "<RequesterCredentials><eBayAuthToken>$userToken</eBayAuthToken></RequesterCredentials>";
 $requestXmlBody .= '</GetOrdersRequest>';
 $session = new eBaySession($userToken, $devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
-echo $session;
+print_r($session );
 $responseXml = $session->sendHttpRequest($requestXmlBody);
 if (stristr($responseXml, 'HTTP 404') || $responseXml == '')
     die('<P>Error sending request');
