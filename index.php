@@ -26,7 +26,7 @@ $session = new eBaySession($userToken, $devID, $appID, $certID, $serverUrl, $com
 print_r($session );
 $responseXml = $session->sendHttpRequest($requestXmlBody);
 print_r($responseXml);
- if ($responseXml == '')
+ if (stristr($responseXml, 'HTTP 404'))
      die('<P>Error sending request');
 //Xml string is parsed and creates a DOM Document object
 $responseDoc = new DomDocument();
