@@ -16,8 +16,8 @@ $CreateTimeTo = gmdate("Y-m-d\TH:i:s");
 
 $requestXmlBody = '<?xml version="1.0" encoding="utf-8" ?>';
 $requestXmlBody .= '<GetOrdersRequest xmlns="urn:ebay:apis:eBLBaseComponents">';
-$requestXmlBody .= '<DetailLevel>DetailLevelCodeType</DetailLevel>';
-$requestXmlBody .= '<OrderIDArray> OrderIDArrayType <OrderID> OrderIDType (string)</OrderID></OrderIDArray>';
+$requestXmlBody .= '<DetailLevel>ReturnAll</DetailLevel>';
+$requestXmlBody .= '<OrderIDArray> Seller <OrderID> All </OrderID></OrderIDArray>';
 $requestXmlBody .= "<CreateTimeFrom>$CreateTimeFrom</CreateTimeFrom><CreateTimeTo>$CreateTimeTo</CreateTimeTo>";
 $requestXmlBody .= "<RequesterCredentials><eBayAuthToken>$userToken</eBayAuthToken></RequesterCredentials>";
 $requestXmlBody .= '</GetOrdersRequest>';
