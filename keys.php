@@ -1,7 +1,8 @@
 <?php  //show all errors - useful whilst developing
+   defined('ENV') || define('ENV', 'DEVELOPMENT');
     error_reporting(E_ALL);
 
-
+     
     // if ($production) {
     //     $devID = '38bd1407-6150-4a2a-87ea-563d0dd48b61';   // these prod keys are different from sandbox keys
     //     $appID = 'deekshar-OrderDis-PRD-4134e8f72-9b7ef546';
@@ -18,6 +19,8 @@
       
     // } else {
         // sandbox (test) environment
+
+        $compatabilityLevel = 855;    // eBay API version
         $devID  = '38bd1407-6150-4a2a-87ea-563d0dd48b61';   // insert your devID for sandbox
         $appID  = 'deekshar-OrderDis-SBX-6134e8f72-71469deb';   // different from prod keys
         $certID = 'SBX-134e8f724d4b-045d-4c91-b24f-d5c5';   // need three keys and one token
@@ -25,7 +28,7 @@
         $serverUrl = 'https://api.sandbox.ebay.com/ws/api.dll';
         $shoppingURL = 'http://open.api.sandbox.ebay.com/shopping';
         $findingURL= 'http://svcs.sandbox.ebay.com/services/search/FindingService/v1';
-
+        
 
         $loginURL = 'https://signin.sandbox.ebay.com/ws/eBayISAPI.dll'; // This is the URL to start the Auth & Auth process
         $feedbackURL = 'http://feedback.sandbox.ebay.com/ws/eBayISAPI.dll'; // This is used to for link to feedback
