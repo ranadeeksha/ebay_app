@@ -20,6 +20,7 @@ $requestXmlBody .= '<DetailLevel>ReturnAll</DetailLevel>';
 $requestXmlBody .= "<CreateTimeFrom>$CreateTimeFrom</CreateTimeFrom><CreateTimeTo>$CreateTimeTo</CreateTimeTo>";
 $requestXmlBody .= "<RequesterCredentials><eBayAuthToken>$userToken</eBayAuthToken></RequesterCredentials>";
 $requestXmlBody .= '</GetOrdersRequest>';
+print_r($requestXmlBody);
 $session = new eBaySession($userToken, $devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
 print_r($session );
 $responseXml = $session->sendHttpRequest($requestXmlBody);
