@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 /*  © 2013 eBay Inc., All Rights Reserved */ 
 /* Licensed under CDDL 1.0 -  http://opensource.org/licenses/cddl1.php */
@@ -59,6 +59,4 @@ if ($errors->length > 0) {
 
 
 ?>
-=======
-test ebay
->>>>>>> f619834a3a3cc4e4396f76bb0b940c76a327aff3
+
