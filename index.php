@@ -33,7 +33,7 @@
  $errors = $responseDoc->getElementsByTagName('Errors');
  $response = simplexml_import_dom($responseDoc);
  $entries = $response->PaginationResult->TotalNumberOfEntries;
- if there are error nodes
+ //if there are error nodes
  if ($errors->length > 0) {
      echo '<P><B>eBay returned the following error(s):</B>';
      //display each error
