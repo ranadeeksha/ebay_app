@@ -48,7 +48,7 @@ class Token
 } // class
 $session = new eBaySession($devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
 		print_r( $session);
-echo "hello";
+echo "hello fgfghjhk";
 
  
  ?>
