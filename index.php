@@ -31,8 +31,7 @@ class Token
         $requestXmlBody .= '</FetchTokenRequest>';
         print_r( $requestXmlBody);
         //Create a new eBay session with all details pulled in from included keys.php
-        $session = new eBaySession($devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
-		print_r( $session);
+        
         //send the request and get response
         $responseXml = $session->sendHttpRequest($requestXmlBody);
        print( $responseXml);
@@ -47,7 +46,8 @@ class Token
     } // __construct
 
 } // class
-
+$session = new eBaySession($devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
+		print_r( $session);
 echo "hello";
 
  
