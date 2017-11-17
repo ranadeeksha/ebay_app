@@ -47,6 +47,8 @@ class Token
 
 } // class
 
+echo "hello";
+
  
  ?>
  
