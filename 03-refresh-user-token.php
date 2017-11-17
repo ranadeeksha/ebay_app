@@ -38,9 +38,9 @@ use \DTS\eBaySDK\OAuth\Types;
  * Create the service object.
  */
 $service = new Services\OAuthService([
-    'credentials' => $config['sandbox']['credentials'],
-    'ruName'      => $config['sandbox']['ruName'],
-    'sandbox'     => true
+    'credentials' => $config['production']['credentials'],
+    'ruName'      => $config['production']['ruName'],
+    'production'     => true
 ]);
 
 /**
@@ -49,8 +49,8 @@ $service = new Services\OAuthService([
 $request = new Types\RefreshUserTokenRestRequest();
 $request->refresh_token = '<REFRESH TOKEN>';
 $request->scope = [
-    'https://api.ebay.com/oauth/api_scope/sell.account',
-    'https://api.ebay.com/oauth/api_scope/sell.inventory'
+    'https://api.ebay.com/oauth/api_scope/sell.fulfillment',
+    
 ];
 
 /**
