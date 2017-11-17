@@ -4,42 +4,6 @@
  
 
 
-    //if ($production) {
-//         $devID = '38bd1407-6150-4a2a-87ea-563d0dd48b61';   // these prod keys are different from sandbox keys
-//         $appID = 'deekshar-OrderDis-PRD-4134e8f72-9b7ef546';
-//         $certID = 'PRD-134e8f72e55b-f2f6-4e5d-9b99-8b3f';
-//         //set the Server to use (Sandbox or Production)
-//         $serverUrl   = 'https://api.ebay.com/ws/api.dll';      // server URL different for prod and sandbox
-//         $shoppingURL = 'http://open.api.ebay.com/shopping';
-//         $findingURL= 'http://svcs.ebay.com/services/search/FindingService/v1';
-
-//         $appToken = 'v^1.1#i^1#p^1#r^0#f^0#I^3#t^H4sIAAAAAAAAAOVXa2wUVRTu9mmFQoy8QiCug0oCzOy9M7O73Um7ZKHU1tAHbFsslcDszB320tmZzdwZ240opVCC4OOHpn9UAiiJRqVqqj9UMKIJmIgKhhjCQxONoiBRiTFEot6ZXcq2Ep5FSJw/kzn33HO/7zvn3DsX9JSWz9pQt+GPCl9Z4dYe0FPo88ExoLy0ZPa4osKpJQUgz8G3teeenuLeohNVRE7paWkxImnTIMjfndINInnGasaxDMmUCSaSIacQkWxFiscaFko8B6S0ZdqmYuqMv76mmpGRKKuVES2kKeFQOChSq3E+ZotZzagiUFQNKFqiUlOEhEbHCXFQvUFs2bCrGR7AMAshC8MtICjxIUnkOQHApYy/DVkEmwZ14QAT9eBK3lwrD+ulocqEIMumQZhofaw23hSrr1nQ2FIVyIsVzekQt2XbIcO/5psq8rfJuoMuvQzxvKW4oyiIECYQza4wPKgUOw/mGuB7UquaIPAa5JVQBMJwJDgqUtaaVkq2L43DtWCV1TxXCRk2tjOXU5SqkViFFDv31UhD1Nf43dciR9axhpFVzSyYF2uPNTczURWhTpKULbbJUpFVgwnbvLiGFaEgokotzLORRBhpQTGUWygbLSfziJXmm4aKXdGIv9G05yGKGo3UBuZpQ52ajCYrptkuony/cE5DPhJc6iY1m0XHThpuXlGKCuH3Pi+fgaHZtm3hhGOjoQgjBzyJaFul01hlRg56tZgrn25SzSRtOy0FAl1dXVyXwJnWygAPAAw82LAwriRRSmaor9vrWX98+Qks9qgoiM4kWLIzaYqlm9YqBWCsZKJ8iKdPTvfhsKIjrf8y5HEODO+I0eoQWYCqIItiQkskQkCAo9Eh0VyRBlwcKCFn2JRsdSI7rcsKYhVaZ04KWViVhKDGC5UaYtVQRGPFiKaxiaAaYqGGEEAokVAilf+nRrnSUo8rZho1mzpWMqNS8KNW7IKlNsuWnYkjXaeGK636i5IkLskbTs/t9aui6MYgNIicxpxb25xipgKmTDc117TcQ31dvDE9D2+ppFKCWaZYzR5knEeXIw8rnIWI6Vj0DOea3H29xexEBu0S2zJ1HVlt8LqUGL0d/Sbt5hdlpeiYyrj8VmN2ldvkNda2bN9E1sW9vo6LMIdBCCojIRFcX17ne3ltyfwHm9ZVJbbOJDZSb8APSGD4dSha4D2w1/c26PW9SW9UIADuhTPA3aVFrcVFY6cSbCMOyxpH8EqD/uVbiOtEmbSMrcJSX8e0N15ZnncB27oMTBm6gpUXwTF59zEw7cJICRw/uQKGIf29B0E+JPJLwYwLo8VwUvGE6Q0l8HDpuDvh/g2zft83c39EHTgNKoacfL6SAloZBcKEQWNAn/lDctuUuhNnY7tXbTvjvL8JT+iqX0HWbip38L4tDWqYkN1HbxtQP75rz5Z1oUX3b94pvrpoev+zx5NL2MOPPpDZqP3WgZpWf7Tx3Oxd771czL4jvfbUkScf2nPkhaPff3ffmSNlq9s3L1lzgP1aJOML9ef77jh4tNXp++LA02ptf/fO0p/Kjq05xW9ZMGvyY3NOnT44yN++Tt/8or9u4vZf9pftGPvp3+0fftl37tfu1s/m/PlX3/Gqb9Z3bn/mpdfPhg9Naqud699TeGxwzOGFHclHGqu+fevH4CHpwJqavrmrmp846dsRHPi5fe9BYe2S/g/Wv7vsc35Xh7x+x97HV1RM9D138iv8STZ9/wDJw8fcGg8AAA==';
-        // This is used in the Auth and Auth flow
-
-        // This is an initial token, not to be confused with the token that is fetched by the FetchToken call
-      
-//     } else {
-//         // sandbox (test) environment
-//         $devID  = '38bd1407-6150-4a2a-87ea-563d0dd48b61';   // insert your devID for sandbox
-//         $appID  = 'deekshar-OrderDis-SBX-6134e8f72-71469deb';   // different from prod keys
-//         $certID = 'SBX-134e8f724d4b-045d-4c91-b24f-d5c5';   // need three keys and one token
-//         //set the Server to use (Sandbox or Production)
-//         $serverUrl = 'https://api.sandbox.ebay.com/ws/api.dll';
-//         $shoppingURL = 'http://open.api.sandbox.ebay.com/shopping';
-//         $findingURL= 'http://svcs.sandbox.ebay.com/services/search/FindingService/v1';
-
-
-//         $loginURL = 'https://signin.sandbox.ebay.com/ws/eBayISAPI.dll'; // This is the URL to start the Auth & Auth process
-//         $feedbackURL = 'http://feedback.sandbox.ebay.com/ws/eBayISAPI.dll'; // This is used to for link to feedback
-
-//         $runame = 'deeksha_rana-deekshar-OrderD-zcgnjpjns';  // sandbox runame
-// //         $token ='AgAAAA**AQAAAA**aAAAAA**lD4NWg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4GnAJSBpw2dj6x9nY+seQ**e2MEAA**AAMAAA**VYxZnKO793nFBudW1KvWiHhpfIwa/kqWC4SmsapwwqwuLcbkYv2YUFIza68z+/8KfGKG+ybv9jY5FrObITyhnvgWAqCMv1EPJt3+eFQYFw5V3/aewWsf1KUaOokw/ILjjjSlevxj5BSJnM+TGO0wjLgh2DtMyMzBsFGTPIeVqGXp99CzL2GWMqoIA5KTehtyDsCqIQOdtkNJXH+wC06LfZ/anEm+xzOJwViNINMeq+oz/EnwvMLnQW8bczS8mmt8i8TNatUBhb0PN33A1Pv73MQQhdJ+fO+suzeRM+5YrC2mLiTS1fWhqNMqcQhB24Gbo9tH+g/LcIo+WzIZMvjqwjZEoZOeFPg+4G98UfoW712gBuy/pAS93LHZLUiRxcGWh3JMM79UOSuKQzaKqn9RCMMfY+UAAq6q/oEkrVCeq721azdhENGhx5BG52zVZChwTMAbh07yru2drDrzcmoCCzzDUcv7bI6AyATtnAn59Jy3+5uruYUDQLYU5pJy1lEv8lAl2jJeMxQ/DKp01Me6wSTYWDaqB26mEDpvzVxA2eXhCzOWttFTqVviIytaqoFShsRiS2mqExzxn82o2iZkKVpF5O45JWmhgs1frAfhdXUBYOFfHdWFXigbzWQ50jrs8tBxUndyo0Ekajm3tWF8YhPvxJzVnPcAfEP5b4+YCVWtEq5tFfXI6NfUTBBybiGhQk2R4BMqNWvLWyqhSeoEKZ9ZUiSxQHbKi3zlDbk9EnBrj3owXyzlJGpfczkPmGYK
-// // ';
-
-//         // This is the sandbox application token, not to be confused with the sandbox user token that is fetched.
-//         // This token is a long string - do not insert new lines.
-      
-//      }
 return [
     'sandbox' => [
         'credentials' => [
@@ -61,4 +25,4 @@ return [
         'oauthUserToken' => 'v^1.1#i^1#f^0#r^0#I^3#p^3#t^H4sIAAAAAAAAAOVXe2gURxzO5VWsxoqIVdH2uloL1b2b3dvbF97VM4kYMd6Zi1EjGmZ3Z5M1e7vbnb0kV6w9UlALFooNRSn1UZpCaGmVvqCihPRBUUtFSQtasBWxRWoFkaRYW7p7eXhJ6yOJfwSaf8L+5vf6vt83czMgWzrl2Z2rdvaX+R4pPJQF2UKfj5oKppSWLJleVDivpADkOfgOZRdli9uLfl2GYUq3xBqELdPAyN+W0g0s5owRIm0bogmxhkUDphAWHVlMxqrXiHQAiJZtOqZs6oS/qiJCMIgNs7wSZiQe8iAku1ZjKGetGSEEhoGqAsI0QjIryN46xmlUZWAHGk6EoAHFkRRFUlwt4ESaFkN8gBOoesJfh2ysmYbrEgBENNeumIu183q9d6sQY2Q7bhIiWhVbmYzHqioq19YuC+blig7ykHSgk8Yjv8pNBfnroJ5G9y6Dc95iMi3LCGMiGB2oMDKpGBtqZhzt56hGtEApnESFVYYJMw+JypWmnYLOvfvwLJpCqjlXERmO5mTux6jLhrQNyc7g11o3RVWF3/u3Lg11TdWQHSEqV8Q2rU9W1hD+ZCJhmy2aghQPKcUKPMsLgGWIqIJQM26yodEQGiwzkGuQ5FF1yk1D0TzKsH+t6axAbs9oNDNUHjOuU9yI2zHV8frJ9xOGGOSFem+kAzNMO02GN1WUcmnw5z7vz/+QIO5I4GFJgudljkYygJIaVgH9X4rw9vpYVRH1BhNLJIJeK0iCGTIF7WbkWDqUESm77KZTyNYUMRRW6RCvIlJhBZVkBFUlpbDCkpSKEEBIkmSB//+Iw3FsTUo7aFggoxdyECNEUjYtlDB1Tc4Qo11yx82gHNpwhGhyHEsMBltbWwOtoYBpNwZpAKjgxuo1SbkJpSAx7Kvd35nUcsqQkRuFNdHJWG43ba7u3OJGIxEN2UoC2k4miXTdNQypdkRv0dHWu4DEHsjJBc+Lx24CaGkBT9UB2UwFTehuYs/UkOvY/yBOQewSFBjYE27mgI2gYhp6ZjzBY4jRjBZXVKaduVtBb68/UIIxFIWybKYNZzwYB0PHEKGmdVXTdW/vjKdgXvhY2jSgnnE0GQ+XnJDwY5ZVpUwu4Q8ck9Am47aC7AoNk4maCpKhQgziVY4mBYlDaphhJ4RbQS2ajBq0SYbdSOv6hHBVoJbJNs8QLynuXl9KMYAjWSoMSAbSkOQ5BMkwG1KAojC8xFITwl3dONlGKfACxzEsGwKAmxC0cl1zj4jazGT7gVplYgcpE4PmXg8nFyjvqBk6aVA4LJEqrbIkg8KKe+4IAslLIfVBIY8y5F20/nXBDo5830YLcn9Uu+8T0O476j6RQRA8TS0ET5UWrS8umjYPaw4KaFANYK3RcJ9tNgo0o4wFNbuw1Ld5/pGuhrwX9aEtYM7wm3pKETU174EN5t9ZKaEee7yM4iiK4gBHu1flerDwzmoxNbt41mXhzc3Hz+7bM2vdhmbxZPxEZ/rGeVA27OTzlRQUt/sKFrVdu1lW8PfZwEubTi/bPX3Hqx/Qh/94smdeV0nPjeq+N94tZq4c2H/7jNb9097uPzuDi491vt/S99vM3l4ms+tq1+qPAy98Ix++aQVvbTse2rB/ZvKrj76oLv25eMGpSw1z5/5Vf3RlpL/u08Wv3V6y9fLqpV/v7H/ume+nT6tr3f7ExV7rh1PP11y4Pqd7tvzlK2fKD7OzN/V2fH5t+c3Q7z3JI+cLf3z75CUpe/Hg7rd2fLiFjvbHEh0N1/cqzNXzPZf6Z2Q05th7cavv9QVXLO6zDXNaKiWw+tFf9nTtOhg/t/FFZtX2rd+pW/lZ2RmxjjT5zr6jJbu6rW9fXl52ovr0uSx1i7rQJ9860Dkwvn8AZ9NDx+sQAAA=',
         'ruName' => 'deeksha_rana-deekshar-OrderD-qcuktgb'
     ]
-?> 
+
