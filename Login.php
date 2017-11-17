@@ -1,6 +1,6 @@
 <?php
-require_once('./sessionHeader.php');
-require_once('./SingleItem.php');
+//require_once('./sessionHeader.php');
+//require_once('./SingleItem.php');
 require_once('./keys.php');
 require_once('./Token.php');
 
@@ -76,7 +76,7 @@ if ($_SESSION['loginState'] == 'pending') {
     }
 	// Get session ID for the Auth & Auth, save it in session variable for subsequent FetchToken
 	// call in Token.php.
-	$verb1 = 'GetSessionID';
+	$verb1 = 'GetSessionID';ebay/Login.php
 
 	///Build the request Xml string
 	$requestBody1 = '<?xml version="1.0" encoding="utf-8" ?>';
