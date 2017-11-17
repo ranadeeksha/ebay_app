@@ -25,13 +25,20 @@ class Token
         $requestXmlBody = '<?xml version="1.0" encoding="utf-8" ?>';
         $requestXmlBody .= '<FetchTokenRequest xmlns="urn:ebay:apis:eBLBaseComponents">';
        // $requestXmlBody .= "<RequesterCredentials><Username>$username</Username></RequesterCredentials>";
+        $requestXmlBody  .=' <Version>613</Version>';
+        $requestXmlBody .=' <RequesterCredentials>
+                            <DevId>$devID</DevId>
+                            <AppId>$appID </AppId>
+                            <AuthCert>$certID </AuthCert>
+                            </RequesterCredentials>';
         $requestXmlBody .= "<SessionID>$theID</SessionID>";
         $requestXmlBody .= '</FetchTokenRequest>';
-
+        alert($requestXmlBody);
         //Create a new eBay session with all details pulled in from included keys.php
         $session = new eBaySession($devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
         //send the request and get response
         $responseXml = $session->sendHttpRequest($requestXmlBody);
+		alert($responseXml);
 
         if(stristr($responseXml, 'HTTP 404') || $responseXml == '')
             die('<P>Error sending request');
