@@ -30,7 +30,7 @@ function buildSlimApp() {
      * Ensure that you have edited the configuration.php file
      * to include your application keys.
      */
-    $config = require __DIR__.'/../configuration.php';
+    $config = require __DIR__.'/keys.php';
 
     $container = new \Slim\Container();
 
@@ -51,9 +51,9 @@ function buildSlimApp() {
         $config = $container['sdk-config'];
 
         $service = new Services\OAuthService([
-            'credentials' => $config['sandbox']['credentials'],
-            'ruName'      => $config['sandbox']['ruName'],
-            'sandbox'     => true
+            'credentials' => $config['production']['credentials'],
+            'ruName'      => $config['production']['ruName'],
+            'production'     => true
         ]);
 
         return $service;
@@ -84,8 +84,8 @@ function buildSlimApp() {
         $url =  $this->oAuthService->redirectUrlForUser([
             'state' => $state,
             'scope' => [
-                'https://api.ebay.com/oauth/api_scope/sell.account',
-                'https://api.ebay.com/oauth/api_scope/sell.inventory'
+                'https://api.ebay.com/oauth/api_scope/sell.fulfillment',
+               
             ]
         ]);
 
@@ -101,8 +101,8 @@ function buildSlimApp() {
         $api = $this->oAuthService->refreshUserToken(new Types\RefreshUserTokenRestRequest([
             'refresh_token' => $paramRefreshToken,
             'scope' => [
-                'https://api.ebay.com/oauth/api_scope/sell.account',
-                'https://api.ebay.com/oauth/api_scope/sell.inventory'
+                'https://api.ebay.com/oauth/api_scope/sell.fulfillment',
+              
             ]
         ]));
 
