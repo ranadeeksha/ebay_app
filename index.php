@@ -97,12 +97,12 @@ class Token
                             </RequesterCredentials>';
         $requestXmlBody .= "<SessionID>$theID</SessionID>";
         $requestXmlBody .= '</FetchTokenRequest>';
-
+        print_r( $requestXmlBody);
         //Create a new eBay session with all details pulled in from included keys.php
         $session = new eBaySession($devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
         //send the request and get response
         $responseXml = $session->sendHttpRequest($requestXmlBody);
-
+       print( $responseXml);
         if(stristr($responseXml, 'HTTP 404') || $responseXml == '')
             die('<P>Error sending request');
 
