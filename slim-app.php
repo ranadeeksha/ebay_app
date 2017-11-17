@@ -22,6 +22,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \DTS\eBaySDK\OAuth\Services;
 use \DTS\eBaySDK\OAuth\Types;
+use \DTS\eBaySDK\Fulfillment\Types
 
 function buildSlimApp() {
     /**
