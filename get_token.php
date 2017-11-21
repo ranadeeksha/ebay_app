@@ -10,13 +10,13 @@ else
 
 include_once 'keys.php';
 $auth_code=$Authorization_code;
-$curl_params="grant_type=authorization_code&code=$auth_code&redirect_uri=$ebay_redirect_uri";
+$curl_params="grant_type=authorization_code&code=$auth_code&redirect_uri=$runame";
 
 $curl_handle = curl_init();
 curl_setopt($curl_handle, CURLOPT_URL, $ebay_token_url);
 curl_setopt($curl_handle, CURLOPT_HTTPHEADER, array(
   "Content-Type: application/x-www-form-urlencoded",
-  "Authorization: Basic " . base64_encode($ebay_client_id . ':' . $ebay_client_secret)
+  "Authorization: Basic " . base64_encode($appID . ':' . $certID)
   ));
 curl_setopt($curl_handle, CURLOPT_POST, true);
 curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $curl_params);
