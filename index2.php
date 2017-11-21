@@ -7,6 +7,7 @@ session_start();
 set_time_limit(0);
 ini_set("display_errors", 1);
 require 'keys.php';
+require 'refresh_token.php';
 require 'eBaySession.php';
 $siteID = 0;
 $verb = 'GetOrders';
@@ -20,7 +21,7 @@ $requestXmlBody .= "<CreateTimeFrom>$CreateTimeFrom</CreateTimeFrom><CreateTimeT
 $requestXmlBody .= '<OrderRole>Seller</OrderRole><OrderStatus>Active</OrderStatus>';
 $requestXmlBody .= "<RequesterCredentials><eBayAuthToken>$userToken</eBayAuthToken></RequesterCredentials>";
 $requestXmlBody .= '</GetOrdersRequest>';
-$session = new eBaySession($userToken, $devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
+$session = new eBaySession($user_access_token_array , $devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
 $responseXml = $session->sendHttpRequest($requestXmlBody);
 if (stristr($responseXml, 'HTTP 404') || $responseXml == '')
     die('<P>Error sending request');
