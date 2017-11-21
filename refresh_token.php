@@ -9,7 +9,7 @@ $curl_handle = curl_init();
 curl_setopt($curl_handle, CURLOPT_URL, $ebay_token_url);
 curl_setopt($curl_handle, CURLOPT_HTTPHEADER, array(
   "Content-Type: application/x-www-form-urlencoded",
-  "Authorization: Basic " . base64_encode($ebay_client_id . ':' . $ebay_client_secret)
+  "Authorization: Basic " . base64_encode($appID . ':' . $certID)
   ));
 curl_setopt($curl_handle, CURLOPT_POST, true);
 curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $curl_params);
