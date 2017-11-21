@@ -1,7 +1,7 @@
 <?php 
 ini_set("display_errors", 1);
 
-
+include 'get_token.php';
 
 ?>
 <a href="index2.php">order display</a>
