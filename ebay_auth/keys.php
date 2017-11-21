@@ -1,9 +1,9 @@
 <?php 
 
 $ebay_token_url = 'https://api.ebay.com/identity/v1/oauth2/token';
-$ebay_client_id = 'AtsushiK-Etoren-PRD-e132041a0-f9c6b726';
-$ebay_client_secret = 'PRD-132041a01524-2ea9-4998-93e1-89ef';
-$ebay_redirect_uri = 'Atsushi_Kurihar-AtsushiK-Etoren-noiupgut';
+$ebay_client_id = 'deekshar-OrderDis-SBX-6134e8f72-71469deb';
+$ebay_client_secret = 'SBX-134e8f724d4b-045d-4c91-b24f-d5c5';
+$ebay_redirect_uri = 'deeksha_rana-deekshar-OrderD-zcgnjpjns';
 
 
 ?>
