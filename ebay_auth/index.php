@@ -5,6 +5,7 @@ if (!isset($_GET['etor'])) {
 	die('Unauthorised Access');
 }
 
+echo "hello";
 
 ?>
 
