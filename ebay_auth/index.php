@@ -2,10 +2,11 @@
 
 
 if (!isset($_GET['etor'])) {
+	echo "hello";
 	die('Unauthorised Access');
 }
 
-echo "hello";
+
 
 ?>
 
