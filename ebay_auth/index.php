@@ -2,8 +2,8 @@
 
 
 if (!isset($_GET['etor'])) {
-	echo "hello";
-	die('Unauthorised Access');
+
+	die('Unauthorised Access value');
 }
 
 
