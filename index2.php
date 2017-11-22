@@ -21,16 +21,16 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-$response_arry=json_decode($response,true);
+
 $err = curl_error($curl);
 
 curl_close($curl);
 
-// if ($err) {
-//   echo "cURL Error #:" . $err;
-// } else {
-  echo $response_arry;
-//}
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
 
 
 ?>
