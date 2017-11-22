@@ -8,7 +8,7 @@ set_time_limit(0);
 ini_set("display_errors", 1);
 require 'keys.php';
 require 'eBaySession.php';
-$siteID = 0;
+$siteID = 3;
 $verb = 'GetOrders';
 $CreateTimeFrom = gmdate("Y-m-d\TH:i:s",time()-1800);
 $CreateTimeTo = gmdate("Y-m-d\TH:i:s");
