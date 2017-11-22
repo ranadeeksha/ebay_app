@@ -24,8 +24,8 @@ print_r($requestXmlBody);
 $session = new eBaySession($userToken , $devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
 print_r($session);
 $responseXml = $session->sendHttpRequest($requestXmlBody);
-if (stristr($responseXml, 'HTTP 404') || $responseXml == '')
-    die('<P>Error sending request');
+// if (stristr($responseXml, 'HTTP 404') || $responseXml == '')
+//     die('<P>Error sending request');
 //Xml string is parsed and creates a DOM Document object
 $responseDoc = new DomDocument();
 $responseDoc->loadXML($responseXml);
@@ -34,8 +34,8 @@ $errors = $responseDoc->getElementsByTagName('Errors');
 $response = simplexml_import_dom($responseDoc);
 $entries = $response->PaginationResult->TotalNumberOfEntries;
 //if there are error nodes
-// if ($errors->length > 0) {
-//     echo '<P><B>eBay returned the following error(s):</B>';
+if ($errors->length > 0) {
+    echo '<P><B>eBay returned the following error(s):</B>';
     //display each error
     //Get error code, ShortMesaage and LongMessage
     $code = $errors->item(0)->getElementsByTagName('ErrorCode');
