@@ -1,64 +1,35 @@
 <?php
-/*  © 2013 eBay Inc., All Rights Reserved */ 
-/* Licensed under CDDL 1.0 -  http://opensource.org/licenses/cddl1.php */
-?>
-<?php
-session_start();
-set_time_limit(0);
-ini_set("display_errors", 1);
-require 'keys.php';
-require 'eBaySession.php';
-$siteID = 3;
-$verb = 'GetOrders';
-$CreateTimeFrom = gmdate("Y-m-d\TH:i:s",time()-1800);
-$CreateTimeTo = gmdate("Y-m-d\TH:i:s");
 
-$requestXmlBody = '<?xml version="1.0" encoding="utf-8" ?>';
-$requestXmlBody .= '<GetOrdersRequest xmlns="urn:ebay:apis:eBLBaseComponents">';
-$requestXmlBody .= '<DetailLevel>ReturnAll</DetailLevel>';
-$requestXmlBody .= "<CreateTimeFrom>$CreateTimeFrom</CreateTimeFrom><CreateTimeTo>$CreateTimeTo</CreateTimeTo>";
-$requestXmlBody .= '<OrderRole>Seller</OrderRole><OrderStatus>Active</OrderStatus>';
-$requestXmlBody .= "<RequesterCredentials><eBayAuthToken>$userToken</eBayAuthToken></RequesterCredentials>";
-$requestXmlBody .= '</GetOrdersRequest>';
-print_r($requestXmlBody);
-$session = new eBaySession($userToken , $devID, $appID, $certID, $serverUrl, $compatabilityLevel, $siteID, $verb);
-print_r($session);
-$responseXml = $session->sendHttpRequest($requestXmlBody);
-if (stristr($responseXml, 'HTTP 404') || $responseXml == '')
-    die('<P>Error sending request');
-//Xml string is parsed and creates a DOM Document object
-$responseDoc = new DomDocument();
-$responseDoc->loadXML($responseXml);
-//get any error nodes
-$errors = $responseDoc->getElementsByTagName('Errors');
-$response = simplexml_import_dom($responseDoc);
-$entries = $response->PaginationResult->TotalNumberOfEntries;
-//if there are error nodes
-if ($errors->length > 0) {
-    echo '<P><B>eBay returned the following error(s):</B>';
-    //display each error
-    //Get error code, ShortMesaage and LongMessage
-    $code = $errors->item(0)->getElementsByTagName('ErrorCode');
-    $shortMsg = $errors->item(0)->getElementsByTagName('ShortMessage');
-    $longMsg = $errors->item(0)->getElementsByTagName('LongMessage');
-    
-    //Display code and shortmessage
-    echo '<P>', $code->item(0)->nodeValue, ' : ', str_replace(">", "&gt;", str_replace("<", "&lt;", $shortMsg->item(0)->nodeValue));
-    
-    //if there is a long message (ie ErrorLevel=1), display it
-    if (count($longMsg) > 0)
-        echo '<BR>', str_replace(">", "&gt;", str_replace("<", "&lt;", $longMsg->item(0)->nodeValue));
-}else { //If there are no errors, continue
-    if(isset($_GET['debug']))
-    {  
-       header("Content-type: text/xml");
-       print_r($responseXml);
-    }else
-     {  //$responseXml is parsed in view.php
-        include_once 'view.php';
-    }
-} 
+$curl = curl_init();
 
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://api.sandbox.ebay.com/ws/api.dll",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<GetOrdersRequest xmlns=\"urn:ebay:apis:eBLBaseComponents\">\r\n\t<ErrorLanguage>en_US</ErrorLanguage>\r\n\t<WarningLevel>High</WarningLevel>\r\n  <OrderIDArray>\r\n    <OrderID>142553041443-1460358999004</OrderID>\r\n  </OrderIDArray>\r\n  <OrderRole>Seller</OrderRole>\r\n</GetOrdersRequest>\r\n",
+  CURLOPT_HTTPHEADER => array(
+    "cache-control: no-cache",
+    "x-ebay-api-call-name: GetOrders",
+    "x-ebay-api-compatibility-level: 967",
+    "x-ebay-api-iaf-token:v^1.1#i^1#f^0#I^3#r^1#p^3#t^Ul4xMF8xMDpBMjQ4MzFFRjE2NjMzN0RBRDBBMjVEODdGMTQwMDE0QV8xXzEjRV4xMjg0",
+    "x-ebay-api-siteid: 3"
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
 
 
 ?>
