@@ -1,5 +1,7 @@
 <?php 
 
+ini_set('error_reporting', E_ALL);
+
 if (isset($_GET['code'])) {
   $Authorization_code = $_GET['code'];
 }
