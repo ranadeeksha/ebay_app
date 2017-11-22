@@ -31,7 +31,6 @@ if ($err) {
 } else {
   if(isset($_GET['debug']))
     {  
-       header("Content-type: text/xml");
        print_r($response);
     }else
      {  //$responseXml is parsed in view.php
