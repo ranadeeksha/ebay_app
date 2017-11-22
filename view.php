@@ -12,7 +12,7 @@ if ($entries == 0) {
     $orders = $response->OrderArray->Order;
     if ($orders != null) {
         foreach ($orders as $order) {
-            echo "Order Information:\n";
+           
             echo "OrderID ->" . $order->OrderID . "\n";
             // echo "Order -> Status:" . $orderStatus = $order->OrderStatus . "\n";
        }
