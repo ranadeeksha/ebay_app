@@ -29,13 +29,9 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  if(isset($_GET['debug']))
-    {  
-       print_r($response);
-    }else
-     {  //$responseXml is parsed in view.php
-        include_once 'view.php';
-    }
+ 
+     
+ echo $response;
 }
 
 
