@@ -23,6 +23,7 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $responesval = json_decode($response,true);
 print_r($responesval);
+echo "hello";
 
 $err = curl_error($curl);
 
