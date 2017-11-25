@@ -17,6 +17,7 @@ $requestXmlBody = '<?xml version="1.0" encoding="utf-8" ?>';
 $requestXmlBody .= '<GetOrdersRequest xmlns="urn:ebay:apis:eBLBaseComponents">';
 $requestXmlBody .= "<RequesterCredentials><eBayAuthToken>$userToken</eBayAuthToken></RequesterCredentials>";
 $requestXmlBody .= "<CreateTimeFrom>$CreateTimeFrom</CreateTimeFrom><CreateTimeTo>$CreateTimeTo</CreateTimeTo>";
+$requestXmlBody .= "<OrderIDArray><OrderID>142553041443-1460358999004</OrderID></OrderIDArray>"
 $requestXmlBody .= '<OrderRole>Seller</OrderRole><OrderStatus>Active</OrderStatus>';
 $requestXmlBody .= '</GetOrdersRequest>';
 print_r($requestXmlBody);
