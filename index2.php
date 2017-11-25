@@ -10,7 +10,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<GetOrdersRequest xmlns=\"urn:ebay:apis:eBLBaseComponents\">\r\n\t<ErrorLanguage>en_US</ErrorLanguage>\r\n\t<WarningLevel>High</WarningLevel>\r\n  <OrderIDArray>\r\n    <OrderID>110244356306</OrderID>\r\n  </OrderIDArray>\r\n  <OrderRole>Seller</OrderRole>\r\n</GetOrdersRequest>\r\n",
+  CURLOPT_POSTFIELDS => "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<GetOrdersRequest xmlns=\"urn:ebay:apis:eBLBaseComponents\">\r\n\t<ErrorLanguage>en_US</ErrorLanguage>\r\n\t<WarningLevel>High</WarningLevel>\r\n<OrderRole>Seller</OrderRole>\r\n</GetOrdersRequest>\r\n",
   CURLOPT_HTTPHEADER => array(
     "cache-control: no-cache",
     "x-ebay-api-call-name: GetOrders",
