@@ -21,8 +21,7 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-$val = json_decode($response,true);
-print_r($val);
+
 
 $err = curl_error($curl);
 
@@ -34,7 +33,7 @@ if ($err) {
  
      
  echo $response;
-  print_r($response);
+ 
 }
 
 
