@@ -18,7 +18,7 @@ curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, false);
 
 $curl_response = curl_exec($curl_handle);
 $user_access_token_array = json_decode($curl_response,true);
-// print_r($user_access_token_array);
+print_r($user_access_token_array);
 $curl_error = curl_errno($curl_handle);
 if ($curl_error) {
   $curl_error = curl_error($curl_handle);
